@@ -72,6 +72,22 @@ Minecraft 服务器运营 · 皮肤站与登录验证 · 前端与插件开发
 | **[kokuu-credit](https://github.com/KokuuStudio/kokuu-credit)** | 皮肤站插件。积分**唯一账本**（`users.score` + 流水），同时是账号互通的 OAuth2 授权服务端 |
 | **[kokuu-forum](https://github.com/KokuuStudio/kokuu-forum)** | 皮肤站插件。仪表盘论坛聚合卡片，含每个帖子最近评论摘要与置顶帖公告 |
 
+**积分兑换（游戏货币）**
+
+论坛积分可以换成 MC 服务端的经济插件货币（CMI）。
+采用「**直连发放**」模式：玩家在皮肤站点一下就生成订单，
+MC 端插件轮询领取并就地发放，**不需要进游戏输任何兑换码**。
+
+| 仓库 | 说明 |
+| --- | --- |
+| **[kokuu-exchange](https://github.com/KokuuStudio/kokuu-exchange)** | 皮肤站插件。兑换页 + 订单状态机 + 幂等键；订单强绑定 `players` 表的具体角色，超时未领取自动退款 |
+| **[exchange-bridge](https://github.com/KokuuStudio/exchange-bridge)** | MC 服务端插件（Java）。BRPOP 队列领取订单，切主线程调 CMI `deposit()` 发放，结果回传 |
+
+> 两端**必须成对使用**，且队列 key 两边要填一致。
+> ⚠️ 有个隐蔽坑：皮肤站侧 `phpredis` 的 `OPT_PREFIX` 会给键名偷偷加
+> `blessing_skin_database_` 前缀，而 MC 端是裸 Jedis 读字面量键名 ——
+> 两侧永久错位且**完全静默**。详见两个仓库的 README。
+
 **积分互通设计**
 
 论坛只做「加分事件来源」，账本只有皮肤站一份：
