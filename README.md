@@ -19,4 +19,4 @@
 - [kokuu-auth](https://github.com/KokuuStudio/kokuu-auth) — 皮肤站与积分
 - [kokuu-panel](https://github.com/KokuuStudio/kokuu-panel) — MC 服务器管理平台
 - [kokuu-site](https://github.com/KokuuStudio/kokuu-site) — 官网
-- Thaumcraft 6 → 1.20.1 移植（仓库私有）
+- Thaumcraft 6 → 1.20.1 移植 · 在 [KokuuWork](https://github.com/KokuuWork) 组织下推进
