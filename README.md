@@ -1,12 +1,12 @@
 <div align="center">
 
-<img src="profile-assets/banner.png" alt="KOKUU 谷雨工作室" width="100%">
+<img src="profile-assets/banner.png" alt="KOKUU" width="100%">
 
-# KOKUU 谷雨工作室
+# Kokuu
 
 **雨落下之后，就交给时间。**
 
-Minecraft 服务器运营 · 皮肤站与登录验证 · 积分中台 · 平台化开发
+Minecraft 服务器 · 皮肤站与登录验证 · 积分中台 · 平台化开发
 
 [![官网](https://img.shields.io/badge/官网-kokuu.org-0FA3A3?style=flat-square)](https://kokuu.org)
 [![论坛](https://img.shields.io/badge/论坛-chat.kokuu.org-8B7FD4?style=flat-square)](https://chat.kokuu.org)
@@ -18,11 +18,11 @@ Minecraft 服务器运营 · 皮肤站与登录验证 · 积分中台 · 平台�
 
 ## 关于
 
-我们是一个小工作室，主线业务：
+一个人维护的几摊东西，非商业化，用爱发电：
 
 | | |
 | --- | --- |
-| **Minecraft 服务器** | 运营与维护，非商业化，用爱发电 |
+| **Minecraft 服务器** | 运营与维护 |
 | **皮肤站 KokuuSkin** | 基于 Blessing Skin Server 的自建皮肤站与登录验证服务 |
 | **积分中台** | 游戏内货币与网站积分的桥接，唯一账本在皮肤站 |
 | **KokuuPanel** | 自研 MC 服务器管理平台，一个平台管完所有服 |
@@ -32,18 +32,18 @@ Minecraft 服务器运营 · 皮肤站与登录验证 · 积分中台 · 平台�
 
 ---
 
-## 活跃仓库（4 个）
+## 活跃仓库（3 个）
 
 ### [kokuu-auth](https://github.com/KokuuStudio/kokuu-auth) · 皮肤站 + 积分经济 monorepo
 
 一个仓库装下整条皮肤站与积分链路，各组件完整提交历史保留（git subtree）：
 
-| 路径 | 来源（原仓库） | 说明 |
-| --- | --- | --- |
-| `server/` | kokuu-skin-server | 定制版 Blessing Skin 内核：补齐核心表索引、修复路由缓存 bug、SQLite WAL 调优、低配部署指南 |
-| `plugins/kokuu-credit` | kokuu-credit | 积分**唯一账本**（`users.score` + 流水），同时是两站账号互通的 OAuth2 授权服务端 |
-| `plugins/kokuu-exchange` | kokuu-exchange | 积分兑换游戏货币：订单状态机 + 幂等键 + 超时自动退款 |
-| `plugins/kokuu-coupon` | kokuu-coupon | 兑换码与抽奖：积分产出端，兑换码发积分 / 发抽奖次数，抽奖吐回积分 |
+| 路径 | 说明 |
+| --- | --- |
+| `server/` | 定制版 Blessing Skin 内核：补齐核心表索引、修复路由缓存 bug、SQLite WAL 调优、低配部署指南 |
+| `plugins/kokuu-credit` | 积分**唯一账本**（`users.score` + 流水），同时是两站账号互通的 OAuth2 授权服务端 |
+| `plugins/kokuu-exchange` | 积分兑换游戏货币：订单状态机 + 幂等键 + 超时自动退款 |
+| `plugins/kokuu-coupon` | 兑换码与抽奖：积分产出端，兑换码发积分 / 发抽奖次数，抽奖吐回积分 |
 
 ### [kokuu-panel](https://github.com/KokuuStudio/kokuu-panel) · MC 服务器管理平台
 
@@ -62,27 +62,29 @@ Minecraft 服务器运营 · 皮肤站与登录验证 · 积分中台 · 平台�
 [`legacy/exchange-bridge/`](https://github.com/KokuuStudio/kokuu-panel/tree/main/legacy/exchange-bridge)
 （MC 服务端队列执行器插件）。
 
-### [kokuu-site](https://github.com/KokuuStudio/kokuu-site) · 工作室官网
+### [kokuu-site](https://github.com/KokuuStudio/kokuu-site) · 官网
 
 <https://kokuu.org> · 零依赖单文件静态站。
 
-### KokuuStudio · 本仓库
+---
 
-GitHub 组织门面与导航。
+## 现在在做
+
+- Minecraft 1.20.1 Forge 的 Thaumcraft 6 社区移植（仓库私有，还没到能见人的程度）
 
 ---
 
-## 已归档（8 个）
+## 收起来的（8 个，私有）
 
-以下仓库是想法验证阶段的产物，已归档为只读。归档只是收起，代码与历史都在，
-随时可解开：
+早期方向验证的产物，现已设为私有 —— 代码和历史都在，只是不摆在台面上：
 
-- **论坛生态**：`kokuu-forum-points`（论坛积分互通）、`kokuu-forum`（论坛聚合卡片）、`kokuu-core`（共享内核，仅被前者依赖）
-- **视觉与主题**：`kokuu-theme`（Flarum 主题）、`kokuu-home` / `kokuu-ui`（皮肤站主题双件套）、`kokuu-quote` / `kokuu-quote-flarum`（提瓦特一言，两平台版）
+- **论坛生态**：`kokuu-forum-points`（论坛积分互通）、`kokuu-forum`（论坛聚合卡片）、`kokuu-core`（共享内核）
+- **视觉与主题**：`kokuu-theme`（Flarum 主题）、`kokuu-home` / `kokuu-ui`（皮肤站主题双件套）
+- **一言**：`kokuu-quote` / `kokuu-quote-flarum`（提瓦特一言，两平台版）
 
-> 归档原因：当前主线聚焦「皮肤站积分经济 + MC 平台」，论坛与主题方向暂停。
+> 收起原因：主线聚焦「皮肤站积分经济 + MC 平台」，论坛与主题方向暂停。
 > 其中 `kokuu-quote-flarum` 的 335 条词库、`kokuu-theme` 的 5010 行视觉系统
-> 是完整的可复用资产，方向重启时直接解开归档。
+> 是完整的可复用资产，方向重启时直接拿回来用。
 
 ---
 
@@ -150,7 +152,7 @@ Minecraft 服务器长期开放，欢迎加入。
 
 <div align="center">
 
-**[工作室官网](https://kokuu.org)** · **[论坛](https://chat.kokuu.org)** · **[皮肤站 + 积分](https://github.com/KokuuStudio/kokuu-auth)** · **[MC 管理平台](https://github.com/KokuuStudio/kokuu-panel)**
+**[官网](https://kokuu.org)** · **[论坛](https://chat.kokuu.org)** · **[皮肤站 + 积分](https://github.com/KokuuStudio/kokuu-auth)** · **[MC 管理平台](https://github.com/KokuuStudio/kokuu-panel)**
 
 *雨落下之后，就交给时间。*
 
